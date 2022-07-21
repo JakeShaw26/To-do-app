@@ -1,13 +1,11 @@
 import React from "react";
-import { Link, Navigate, Route, Routes, useNavigate } from "react-router-dom";
-
-import SinglePage from "./SinglePage";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
   let navigate = useNavigate();
   return (
-    <div>
-      <ul>
+    <div className="about__content">
+      <ul className="about__list">
         <li>
           <button
             onClick={() => {

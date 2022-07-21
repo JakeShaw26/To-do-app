@@ -24,7 +24,7 @@ const SinglePage = () => {
   const about = aboutData.find((about) => about.id === id);
 
   return (
-    <div>
+    <div className="main__content">
       <h1>{about.title}</h1>
       <p>{about.description}</p>
     </div>
