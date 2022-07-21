@@ -3,6 +3,11 @@ import TodosList from "../TodosList/TodosList";
 import Header from "../Header/Header";
 import InputTodo from "../InputTodo/InputTodo";
 import { v4 as uuidv4 } from "uuid";
+import { Route, Routes } from "react-router-dom";
+import About from "/Users/jakeshaw/Upskilling/To-do-app/my-to-do/src/functionBased/Pages/About.jsx";
+import NotMatch from "/Users/jakeshaw/Upskilling/To-do-app/my-to-do/src/functionBased/Pages/NotMatch.jsx";
+import Navbar from "/Users/jakeshaw/Upskilling/To-do-app/my-to-do/src/functionBased/Components/Navbar/Navbar.jsx";
+import SinglePage from "../../Pages/SinglePage";
 
 const TodoContainer = () => {
   const [todos, setTodos] = useState(getInitialTodos());
@@ -62,18 +67,33 @@ const TodoContainer = () => {
   }, [todos]);
 
   return (
-    <div className="container">
-      <div className="inner">
-        <Header />
-        <InputTodo addTodoProps={addTodoItem} />
-        <TodosList
-          todos={todos}
-          handleChangeProps={handleChange}
-          deleteTodoProps={delTodo}
-          setUpdate={setUpdate}
-        />
-      </div>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div className="container">
+              <div className="inner">
+                <Header />
+                <InputTodo addTodoProps={addTodoItem} />
+                <TodosList
+                  todos={todos}
+                  handleChangeProps={handleChange}
+                  deleteTodoProps={delTodo}
+                  setUpdate={setUpdate}
+                />
+              </div>
+            </div>
+          }
+        ></Route>
+
+        <Route path="/about/*" element={<About />} />
+        <Route path={`/about-content`} element={<SinglePage />} />
+
+        {/* <Route path="*" element={<NotMatch />} /> */}
+      </Routes>
+    </>
   );
 };
 
