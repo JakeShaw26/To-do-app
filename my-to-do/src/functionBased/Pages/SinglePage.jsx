@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { AiFillLinkedin } from "react-icons/ai";
 
 const SinglePage = () => {
   const aboutData = [
@@ -13,7 +14,8 @@ const SinglePage = () => {
       id: "about-author",
       title: "About the Author",
       description:
-        "This app was developed by Jake Shaw, following a guide from GitHub. I'm an Associate Developer at AND Digital, based in Manchester! You can follow me on LinkedIn by <a href='https://www.linkedin.com/in/jake--shaw/'>clicking here!</a>.",
+        "This app was developed by Jake Shaw, following a guide from GitHub. I'm an Associate Developer at AND Digital, based in Manchester! You can follow me on LinkedIn by clicking here =>",
+      link: "https://www.linkedin.com/in/jake--shaw/",
     },
   ];
 
@@ -26,7 +28,12 @@ const SinglePage = () => {
   return (
     <div className="main__content">
       <h1>{about.title}</h1>
-      <p>{about.description}</p>
+      <p>
+        {about.description}
+        <a href={about.link}>
+          <AiFillLinkedin />
+        </a>
+      </p>
     </div>
   );
 };
