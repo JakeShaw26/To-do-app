@@ -165,3 +165,21 @@ a {
 .main__content p {
   line-height: 25px;
 }
+
+.about__button {
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 5px;
+  width: 100px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.28);
+  color: #fff;
+  background-color: red;
+  font-family: "Segoe UI", Arial, sans-serif;
+  border-radius: calc(0.1 * 100px);
+}
+
+.about__button:hover {
+  cursor: pointer;
+  color: red;
+  background-color: #fff;
+}

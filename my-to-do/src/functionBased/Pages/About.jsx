@@ -8,6 +8,7 @@ const About = () => {
       <ul className="about__list">
         <li>
           <button
+            className="about__button"
             onClick={() => {
               navigate("/about-content", {
                 state: { id: "about-app" },
@@ -19,6 +20,7 @@ const About = () => {
         </li>
         <li>
           <button
+            className="about__button"
             onClick={() => {
               navigate("/about-content", {
                 state: { id: "about-author" },
